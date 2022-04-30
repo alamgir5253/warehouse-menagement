@@ -1,10 +1,9 @@
 .footer-section{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 10rem;
   text-align: center;
   background: RGBA(0,0,0,0.80);
-  padding: 5rem 0;
+  padding: 5rem 0 0 0 ;
   
 }
 .section1, .section2, .section3{
@@ -55,13 +54,11 @@
 @media only screen and (max-width: 992px) {
   .footer-section{
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 8rem;
     }
   }
 
   @media only screen and (max-width: 576px) {
     .footer-section{
       grid-template-columns: repeat(1, 1fr);
-      margin-top: 5rem;
   }
 }

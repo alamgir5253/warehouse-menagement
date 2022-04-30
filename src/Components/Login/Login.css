@@ -1,0 +1,74 @@
+
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  background: #e0e0e0;
+  padding-bottom: 15rem;
+  padding-top: 10rem
+}
+.form-container h2{
+  text-align: center;
+  text-transform: uppercase;
+  color: RGBA(0,0,0,0.58);
+  padding-bottom: 2rem;
+}
+.form-container form{
+  border-radius: 17px;
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+box-shadow:  5px 5px 10px #b8b8b8,
+             -5px -5px 10px #ffffff;
+width: 40rem;
+padding: 3rem 3rem 5rem 3rem;
+}
+.form-container .input-container input, button{
+width: 100%;
+border-radius: 17px;
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+box-shadow:  5px 5px 10px #b8b8b8,
+             -5px -5px 10px #ffffff;
+margin: 1rem 0;
+padding: 1rem;
+font-size: 1.8rem;
+outline: 0
+}
+.form-container button{
+  font-size: 1.8rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,36,189,0.8827906162464986) 45%, rgba(0,212,255,1) 100%);
+  color: #fff;
+  transition: .3s ease-in-out;
+}
+.form-container button:hover{
+  background: linear-gradient(263deg, rgba(2,0,36,1) 0%, rgba(75,36,189,0.8827906162464986) 45%, rgba(0,212,255,1) 100%);
+}
+.form-container .input-container input::placeholder { 
+  color: RGBA(0,0,0,0.71);
+  opacity: 1;
+}
+.form-container p{
+  font-size: 1.8rem;
+  padding-left: .5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-container .social-signup{
+  text-align: center;
+  padding-top: 3rem;
+}
+.form-container .social-signup h5{
+  font-size: 2rem;
+  color: RGBA(0,0,0,0.58);
+}
+.form-container .social-signup .social{
+ width: 100%;
+ text-align: center;
+ cursor: pointer;
+ font-size: 3rem;
+ height: 4rem;
+ background: linear-gradient(263deg, rgba(2,0,36,1) 0%, rgba(75,36,189,0.8827906162464986) 45%, rgba(0,212,255,1) 100%);
+ padding: 1rem 0;
+ color: #fff
+  
+ 
+}
