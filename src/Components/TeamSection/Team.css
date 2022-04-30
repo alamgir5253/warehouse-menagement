@@ -1,0 +1,102 @@
+.team-title{
+  text-align: center;
+  font-size: 3.5rem;
+  color: RGBA(0,0,0,0.80);
+  text-transform: uppercase;
+  margin: 5rem 0;
+}
+.team-section{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+
+}
+.team{
+  width: 100%;
+  
+}
+.team-img{
+  width: 30rem;
+  height: 30rem;
+  border: .1rem solid #FF5E1D;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.team-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: .5s ease-in-out
+}
+.team-img img:hover{
+  transform: scale(1.2)
+}
+.team .team-info{
+  padding: 1rem
+}
+.team-info h3{
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  color: RGBA(0,0,0,0.80)
+}
+.team-info h4{
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  color: RGBA(0,0,0,0.80)
+}
+.team .team-social{
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+
+}
+.facebook, .twitter, .instagram, .youtube{
+  margin-left: 1rem;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+.facebook:hover{
+  color: RGBA(0,0,255,0.76);
+  transform: rotate(360deg)
+}
+.twitter:hover{
+  color: RGBA(0,0,255,0.49);
+  transform: rotate(360deg)
+}
+.instagram:hover{
+  color: #3f729b;
+  transform: rotate(360deg)
+}
+.youtube:hover{
+   color: red;
+   transform: rotate(360deg)
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 992px) {
+  .team-section{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .team-section{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .team-img{
+      width: 20rem;
+      height: 20rem
+    }
+  }
