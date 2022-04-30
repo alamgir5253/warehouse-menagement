@@ -26,10 +26,10 @@
 
 }
 .facebook, .twitter, .instagram, .youtube{
-  margin-left: 1rem;
+  margin: 1rem;
   transition: .3s ease-in-out;
   cursor: pointer;
-  color: #fff
+  
 }
 .facebook:hover{
   color: RGBA(0,0,255,0.76);

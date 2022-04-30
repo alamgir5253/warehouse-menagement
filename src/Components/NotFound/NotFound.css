@@ -1,0 +1,8 @@
+.notfound-container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 5rem 0;
+}
