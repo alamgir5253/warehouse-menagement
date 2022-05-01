@@ -1,19 +1,48 @@
-import React, { useState } from 'react';
-import { FaFacebook,FaGoogle } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+import {FaGoogle } from "react-icons/fa";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './SignUp.css'
+import { useLocation, useNavigate } from 'react-router-dom';
 const SignUp = () => {
+  const navigate = useNavigate();
+  const  location = useLocation();
   const [userinfo, setUserinfo] = useState({
     email: '',
     password: '',
     confirmPassword:''
   })
-  console.log(userinfo.confirmPassword)
+
   const [userError, setUserError] = useState({
     email: '',
     password: '',
     confirmPassword:''
   })
-  // console.log(userinfo);
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+  useEffect(()=>{
+    if(error){
+      <p className='error'>{toast(error.message)}</p>
+    }
+  },[error])
+
+// redirect start 
+let from = location.state?.from?.pathname || "/";
+useEffect(()=>{
+  if(user) {
+    navigate(from, { replace: true });
+  }
+},[user])
+  if(loading){
+    return <p>loading...</p>
+  }
+
   const handleEmail = e => {
     const emailRegex = /\S+@\S+\.\S+/
     const validEmail = emailRegex.test(e.target.value)
@@ -52,7 +81,7 @@ const SignUp = () => {
 
   const handleSignUp = e => {
     e.preventDefault()
-    console.log(userinfo.email, userinfo.password);
+    createUserWithEmailAndPassword(userinfo.email, userinfo.password);
   }
   return (
     <section>
@@ -76,6 +105,7 @@ const SignUp = () => {
         <h5>Or Signup Using </h5>
         <FaGoogle className='social' />
       </div>
+      <ToastContainer />
       </form>
       
     </div>

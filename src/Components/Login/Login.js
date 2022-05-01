@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 import './Login.css'
 const Login = () => {
+  const navigate = useNavigate();
+  const  location = useLocation();
   const [userinfo, setUserinfo] = useState({
     email: '',
     password: ''
@@ -11,25 +16,44 @@ const Login = () => {
     email: '',
     password: ''
   })
-  console.log(userinfo);
+
+  // firebase login start 
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
+
+  
+  // redirect start 
+  let from = location.state?.from?.pathname || "/";
+  useEffect(()=>{
+    if(user) {
+      navigate(from, { replace: true });
+    }
+  },[user])
+  if(loading){
+    return <p>loading...</p>
+  }
   const handleEmail = e => {
     const emailRegex = /\S+@\S+\.\S+/
     const validEmail = emailRegex.test(e.target.value)
     console.log(validEmail);
     if (validEmail) {
-      setUserinfo({ ...userinfo, email: validEmail })
+      setUserinfo({ ...userinfo, email: e.target.value })
       setUserError({ ...userError, email: '' })
     } else {
       setUserError({ ...userError, email: 'enter valid email' })
       setUserinfo({ ...userinfo, email: '' })
     }
   }
+
   const handlePassword = e => {
     const passwordRegex = /.{8,}/
     const validPassword = passwordRegex.test(e.target.value)
-    console.log(validPassword);
     if (validPassword) {
-      setUserinfo({ ...userinfo, password: validPassword })
+      setUserinfo({ ...userinfo, password: e.target.value })
       setUserError({ ...userError, password: '' })
     } else {
       setUserError({ ...userError, password: 'minimum 8 character' })
@@ -39,7 +63,7 @@ const Login = () => {
 
   const handleLogin = e => {
     e.preventDefault()
-    console.log(userinfo.email, userinfo.password);
+    signInWithEmailAndPassword(userinfo.email, userinfo.password);
   }
 
   return (
@@ -48,10 +72,11 @@ const Login = () => {
         <form onSubmit={handleLogin} >
           <h2 className='form-title'>login</h2>
           <div className="input-container">
-            <input type="text" name="" id="" placeholder='enter email' onChange={handleEmail} />
-            <p className='error'>{userError && userError.email}</p>
-            <input type="text" name="" id="" placeholder='enter password' onChange={handlePassword} />
-            <p className='error'>{userError && userError.password}</p>
+          <input type="email" name="email" id="" placeholder='enter email' onChange={handleEmail} />
+          <p className='error'>{userError && userError.email}</p>
+
+          <input type="password" name="password" id="" placeholder='enter password' onChange={handlePassword}/>
+          <p className='error'>{userError && userError.password}</p>
           </div>
           <p>forget password?</p>
           <button type='submit'>Login</button>
