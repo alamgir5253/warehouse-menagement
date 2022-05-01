@@ -6,3 +6,23 @@
   text-transform: uppercase;
   padding: 5rem 0;
 }
+.notfound-container p{
+  margin-bottom: 3rem;
+  color: darkslateblue
+}
+.notfound-container .GoToHome{
+  padding: 1rem 3rem;
+  text-decoration: none;
+  font-size: 2rem;
+  background: #fff;
+  border: .2rem solid blue;
+  color:blue;
+  border-radius: 3rem;
+  transition: .3s ease-in-out
+}
+.GoToHome:hover{
+  
+  
+  background: blue;
+  color:#fff;
+}
