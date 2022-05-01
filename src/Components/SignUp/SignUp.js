@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {FaGoogle } from "react-icons/fa";
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,14 +31,21 @@ const SignUp = () => {
       <p className='error'>{toast(error.message)}</p>
     }
   },[error])
+  // google login start 
+  const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
+  useEffect(()=>{
+    if(GoogleError){
+      toast(GoogleError.message)
+    }
+  },[GoogleError])
 
 // redirect start 
 let from = location.state?.from?.pathname || "/";
 useEffect(()=>{
-  if(user) {
-    navigate(from, { replace: true });
+  if(user ||GoogleUser) {
+    navigate(from);
   }
-},[user])
+},[user, GoogleUser])
   if(loading){
     return <p>loading...</p>
   }
@@ -99,11 +106,10 @@ useEffect(()=>{
           <p className='error'>{userError && userError.confirmPassword}</p>
 
         </div>
-        <p>forget password?</p>
         <button type='submit'>Signup</button>
         <div className="social-signup">
         <h5>Or Signup Using </h5>
-        <FaGoogle className='social' />
+        <FaGoogle onClick={()=>signInWithGoogle()} className='social' />
       </div>
       <ToastContainer />
       </form>

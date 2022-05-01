@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 
 import './Login.css'
@@ -25,14 +27,24 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
-  
+  // google login start 
+  const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
+  useEffect(()=>{
+    if(GoogleError){
+      toast(GoogleError.message)
+    }
+  },[GoogleError])
+
   // redirect start 
   let from = location.state?.from?.pathname || "/";
   useEffect(()=>{
-    if(user) {
+    if(user ||GoogleUser) {
       navigate(from, { replace: true });
     }
-  },[user])
+  },[user, GoogleUser])
+
+  // loading start
+
   if(loading){
     return <p>loading...</p>
   }
@@ -82,8 +94,9 @@ const Login = () => {
           <button type='submit'>Login</button>
           <div className="social-signup">
             <h5>Or Signup Using </h5>
-            <FaGoogle className='social' />
+            <FaGoogle onClick={()=>signInWithGoogle()} className='social' />
           </div>
+          <ToastContainer />
         </form>
 
       </div>
