@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -19,13 +19,26 @@ const Login = () => {
     password: ''
   })
 
-  // firebase login start 
+  // reset password start 
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const handleResetEmail =async()=>{
+    await sendPasswordResetEmail(userinfo.email)
+    toast('reset your password')
+  }
+
+  // useSignInWithEmailAndPassword start 
   const [
     signInWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+
+  useEffect(()=>{
+    if(error){
+      <p className='error'>{toast(error.message)}</p>
+    }
+  },[error])
 
   // google login start 
   const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
@@ -45,9 +58,12 @@ const Login = () => {
 
   // loading start
 
-  if(loading){
+  if(loading ||sending){
     return <p>loading...</p>
   }
+
+  // handleEmail start 
+
   const handleEmail = e => {
     const emailRegex = /\S+@\S+\.\S+/
     const validEmail = emailRegex.test(e.target.value)
@@ -60,6 +76,7 @@ const Login = () => {
       setUserinfo({ ...userinfo, email: '' })
     }
   }
+  // handlePassword start 
 
   const handlePassword = e => {
     const passwordRegex = /.{8,}/
@@ -72,6 +89,7 @@ const Login = () => {
       setUserinfo({ ...userinfo, password: '' })
     }
   }
+  // handleLogin start 
 
   const handleLogin = e => {
     e.preventDefault()
@@ -90,7 +108,7 @@ const Login = () => {
           <input type="password" name="password" id="" placeholder='enter password' onChange={handlePassword}/>
           <p className='error'>{userError && userError.password}</p>
           </div>
-          <p>forget password?</p>
+          <p onClick={handleResetEmail} >forget password?</p>
           <button type='submit'>Login</button>
           <div className="social-signup">
             <h5>Or Signup Using </h5>

@@ -20,6 +20,8 @@ const SignUp = () => {
     password: '',
     confirmPassword:''
   })
+  // useCreateUserWithEmailAndPassword start 
+
   const [
     createUserWithEmailAndPassword,
     user,
@@ -31,8 +33,10 @@ const SignUp = () => {
       <p className='error'>{toast(error.message)}</p>
     }
   },[error])
+
   // google login start 
-  const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] = useSignInWithGoogle(auth);
+  
+  const [signInWithGoogle,GoogleUser,GoogleError] = useSignInWithGoogle(auth);
   useEffect(()=>{
     if(GoogleError){
       toast(GoogleError.message)
@@ -49,6 +53,7 @@ useEffect(()=>{
   if(loading){
     return <p>loading...</p>
   }
+  // handleEmail start 
 
   const handleEmail = e => {
     const emailRegex = /\S+@\S+\.\S+/
@@ -62,6 +67,9 @@ useEffect(()=>{
       setUserinfo({ ...userinfo, email: '' })
     }
   }
+
+  // handlePassword start 
+
   const handlePassword = e => {
     const passwordRegex = /.{8,}/
     const validPassword = passwordRegex.test(e.target.value)
@@ -74,17 +82,18 @@ useEffect(()=>{
       setUserinfo({ ...userinfo, password: '' })
     }
   }
-
+// handle confirmPassword start 
   const handleConfirmPassword = e =>{
-    const userConfirmPassword = e.target.value
-    if(userinfo.password === userConfirmPassword){
-      setUserinfo({...userinfo, ConfirmPassword:userConfirmPassword})
+    
+    if(userinfo.password === e.target.value){
+      setUserinfo({...userinfo, ConfirmPassword:e.target.value})
       setUserError({...Error, confirmPassword:''})
     }else{
       setUserError({...Error, confirmPassword:"password don't match"})
       setUserinfo({...userinfo, confirmPassword:''})
     }
   }
+  // handleSignUp start 
 
   const handleSignUp = e => {
     e.preventDefault()
@@ -99,12 +108,10 @@ useEffect(()=>{
         <div className="input-container">
           <input type="email" name="email" id="" placeholder='enter email' onChange={handleEmail} />
           <p className='error'>{userError && userError.email}</p>
-
           <input type="password" name="password" id="" placeholder='enter password' onChange={handlePassword}/>
           <p className='error'>{userError && userError.password}</p>
           <input type="password" name="" id="password"  placeholder='confirm password' onChange={handleConfirmPassword}/>
           <p className='error'>{userError && userError.confirmPassword}</p>
-
         </div>
         <button type='submit'>Signup</button>
         <div className="social-signup">
@@ -113,7 +120,6 @@ useEffect(()=>{
       </div>
       <ToastContainer />
       </form>
-      
     </div>
     </section>
   );
