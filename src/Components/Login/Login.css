@@ -21,7 +21,7 @@ box-shadow:  5px 5px 10px #b8b8b8,
 width: 40rem;
 padding: 3rem 3rem 5rem 3rem;
 }
-.form-container .input-container input, button{
+.form-container .input-container input {
 width: 100%;
 border-radius: 17px;
 background: linear-gradient(145deg, #cacaca, #f0f0f0);
@@ -34,6 +34,10 @@ outline: 0;
 color: RGBA(0,0,0,0.71);
 }
 .form-container button{
+  margin: 1rem 0;
+  display: block;
+padding: 1rem;
+  width: 100%;
   font-size: 1.8rem;
   border-radius: 10px;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,36,189,0.8827906162464986) 45%, rgba(0,212,255,1) 100%);

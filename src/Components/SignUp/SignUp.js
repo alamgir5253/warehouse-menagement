@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import {FaGoogle } from "react-icons/fa";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './SignUp.css'
 import { useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../Shared/Loading/Loading';
 const SignUp = () => {
   const navigate = useNavigate();
   const  location = useLocation();
@@ -51,7 +52,7 @@ useEffect(()=>{
   }
 },[user, GoogleUser])
   if(loading){
-    return <p>loading...</p>
+    return <Loading />
   }
   // handleEmail start 
 
@@ -118,7 +119,7 @@ useEffect(()=>{
         <h5>Or Signup Using </h5>
         <FaGoogle onClick={()=>signInWithGoogle()} className='social' />
       </div>
-      <ToastContainer />
+      
       </form>
     </div>
     </section>

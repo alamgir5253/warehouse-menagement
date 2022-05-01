@@ -1,0 +1,54 @@
+.blog-title{
+  text-align: center;
+  font-size: 3.5rem;
+  color: RGBA(0,0,0,0.80);
+  text-transform: uppercase;
+  margin: 5rem 0;
+}
+.blog-section{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+  margin: 3rem 1rem 0 1rem;
+}
+.blog-section article{
+  padding: 1rem;
+  box-shadow: 0 0 .5rem salmon
+}
+.blog-section h3{
+  font-size: 2.5rem;
+  color: RGBA(0,12,0,0.99)
+}
+.blog-section h4{
+  font-size: 1.8rem
+}
+.blog-section p{
+  font-size: 1.6rem
+}
+
+
+
+/* responsive blog start here  */
+@media only screen and (max-width: 992px) {
+  .blog-section{
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  .blog-title{
+    font-size: 2.5rem;
+  }
+  .blog-section h3{
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .blog-section{
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+  .blog-title{
+    font-size: 2rem;
+  }
+}

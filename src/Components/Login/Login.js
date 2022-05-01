@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { FaGoogle } from "react-icons/fa";
+import {useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 
 import './Login.css'
 const Login = () => {
@@ -59,7 +60,7 @@ const Login = () => {
   // loading start
 
   if(loading ||sending){
-    return <p>loading...</p>
+    return <Loading />
   }
 
   // handleEmail start 
@@ -114,7 +115,7 @@ const Login = () => {
             <h5>Or Signup Using </h5>
             <FaGoogle onClick={()=>signInWithGoogle()} className='social' />
           </div>
-          <ToastContainer />
+          
         </form>
 
       </div>
