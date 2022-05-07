@@ -1,6 +1,6 @@
 .main-menu{
   
-  padding: 2rem 0;
+  padding: 2rem 0 !important;
 }
 .main-menu h2{
   font-size: 2.5rem;

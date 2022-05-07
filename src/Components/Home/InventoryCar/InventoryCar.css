@@ -1,0 +1,24 @@
+.car{
+  width: 100%;
+}
+.car .car-img{
+  width: 100%;
+}
+.car .car-info{
+  padding: 2rem;
+}
+.car-info h3{
+  font-size: 2.5rem;
+  color: RGBA(0,12,0,0.77)
+}
+.car-info span{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  
+}
+.car-info h5{
+  font-size: 2rem
+}
+.car-info p{
+  font-size: 1.6rem;
+}
