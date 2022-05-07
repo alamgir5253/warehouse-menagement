@@ -1,0 +1,29 @@
+.manageinventories-title{
+  text-align: center;
+  font-size: 3.5rem;
+  color: RGBA(0,0,0,0.80);
+  text-transform: uppercase;
+  margin: 5rem 0;
+}
+
+.ManageInventories-section{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* responsive card start here  */
+@media only screen and (max-width: 992px) {
+  .ManageInventories-section{
+    grid-template-columns: repeat(2, 1fr);
+    
+
+  }
+}
+@media only screen and (max-width: 576px) {
+  .ManageInventories-section{
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+}
