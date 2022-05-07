@@ -5,7 +5,7 @@ const ManageInventory = ({item}) => {
   return (
     <div>
       <div>
-      <div className="car">
+      {/* <div className="car">
         <div className='car-img'>
           <img src={image} alt="car" />
         </div>
@@ -15,8 +15,8 @@ const ManageInventory = ({item}) => {
           <h5><span>quentity</span> {quentity}</h5>
           <p>{description}</p>
           </div>
-          <button>delete item</button>
-      </div>
+          <button className='manageinventory-button'>delete item</button>
+      </div> */}
       </div>
     </div>
   );

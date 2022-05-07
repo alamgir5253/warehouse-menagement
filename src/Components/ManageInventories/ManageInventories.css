@@ -5,12 +5,24 @@
   text-transform: uppercase;
   margin: 5rem 0;
 }
+.manageinventory-button{
+  font-size: 2rem;
+  text-transform: uppercase;
+  background: red;
+  padding: 1rem 3rem;
+  color: white;
+  margin: auto;
+  width: 100%;
+  
+
+}
 
 .ManageInventories-section{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin-top: 3rem;
+  margin: 3rem 0;
+
 }
 
 /* responsive card start here  */
