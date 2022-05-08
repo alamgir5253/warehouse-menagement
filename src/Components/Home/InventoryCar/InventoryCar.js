@@ -2,7 +2,7 @@ import React from 'react';
 import './InventoryCar.css'
 const InventoryCar = ({car}) => {
   console.log(car);
-  const {_id, description, name, image, price, quentity} =car
+  const {_id, description, name, image, price, quentity, suplayer} =car
   return (
     <div>
       <div>
@@ -15,6 +15,7 @@ const InventoryCar = ({car}) => {
           <span>${price}</span>
           <h5><span>quentity</span> {quentity}</h5>
           <p>{description}</p>
+          <p>{suplayer}</p>
           </div>
           <button>inventory</button>
       </div>

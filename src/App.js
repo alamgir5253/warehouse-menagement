@@ -10,6 +10,7 @@ import NotFound from './Components/NotFound/NotFound';
 import RequireAuth from './Components/Shared/RequireAuth/RequireAuth';
 import { ToastContainer} from 'react-toastify';
 import ManageInventories from './Components/ManageInventories/ManageInventories';
+import AddItem from './Components/AddItem/AddItem';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,12 @@ function App() {
         <RequireAuth>
           <ManageInventories>
         </ManageInventories>
+        </RequireAuth>
+        }></Route>
+        <Route path='/additem' element={
+        
+        <RequireAuth>
+        <AddItem></AddItem>
         </RequireAuth>
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
