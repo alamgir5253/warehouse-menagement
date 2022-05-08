@@ -5,7 +5,7 @@ const AddItem = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = data =>{
      console.log(data)
-     const url = 'http://localhost:5000/ManageInventories'
+     const url = 'https://sheltered-brook-56592.herokuapp.com/ManageInventories'
      fetch(url, {
        method:'POST',
        headers:{
