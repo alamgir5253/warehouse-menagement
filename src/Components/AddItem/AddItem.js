@@ -28,6 +28,7 @@ const AddItem = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className="input-container">
       <input placeholder='enter name' type="text" {...register("name", { required: true, maxLength: 20 })} />
+      <input placeholder='enter valid email' type='email' {...register("email")} />
       <input placeholder='price' {...register("price")} />
       <input placeholder='suplayer' type="text" {...register("suplayer")} />
       <input placeholder='quentity' type="number" {...register("quentity")} />
