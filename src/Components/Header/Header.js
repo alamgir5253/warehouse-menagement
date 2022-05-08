@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import './Header.css'
 const Header = () => {
-  const [user,loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const handleSignOut= () =>{
     signOut(auth)

@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyCsTuB6u3L6liOcohY7sQB5FQaAamTw2y8",
-  authDomain: "dream-auto-warehouse.firebaseapp.com",
-  projectId: "dream-auto-warehouse",
-  storageBucket: "dream-auto-warehouse.appspot.com",
-  messagingSenderId: "852259772801",
-  appId: "1:852259772801:web:1445fa9da568bccb713080"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

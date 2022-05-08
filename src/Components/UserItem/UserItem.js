@@ -31,7 +31,6 @@ const handleDelete = id =>{
 }
   return (
     <div>
-      <h1>user item {UserItems.length}</h1>
       <div className="ManageInventories-section">
       {
         UserItems.map(item => <div key={item._id} className="car">
