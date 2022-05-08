@@ -13,13 +13,13 @@ const Footer = () => {
           </div>
       </div>
       <div className='section2'>
-        <h3>contact info</h3>
+        <h3>Contact Info</h3>
         <p>+1 (212)-695-1962</p>
-        <p>Info@Coffeekup.Com</p>
+        <p>alamgir5253@gmail.com</p>
         <p>463 7th Ave, NY 10018, USA</p>
       </div>
       <div className='section3'>
-        <h3>payment method</h3>
+        <h3>Payment Method</h3>
         <img src={payment} alt="" />
 
       </div>

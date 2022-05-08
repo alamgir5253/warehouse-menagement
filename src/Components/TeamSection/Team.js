@@ -28,8 +28,8 @@ const Team = () => {
             <img src={team2} alt="" />
           </div>
           <div className="team-info">
-            <h3>May Brown</h3>
-            <h4>Chief Financial Officer / CEO</h4>
+            <h3>William Dean</h3>
+            <h4>Chief Executive Officer / CEO</h4>
           </div>
           <div className="team-social">
             <FaFacebook className='facebook'/><FaTwitter className='twitter' /><FaInstagram className='instagram' /> <FaYoutube className='youtube' />
@@ -41,8 +41,8 @@ const Team = () => {
             <img src={team3} alt="" />
           </div>
           <div className="team-info">
-            <h3>May Brown</h3>
-            <h4>Chief Financial Officer / CEO</h4>
+            <h3>Zachary Hale</h3>
+            <h4>Lead Sales Manager</h4>
           </div>
           <div className="team-social">
             <FaFacebook className='facebook'/><FaTwitter className='twitter' /><FaInstagram className='instagram' />
@@ -55,8 +55,8 @@ const Team = () => {
             <img src={team4} alt="" />
           </div>
           <div className="team-info">
-            <h3>May Brown</h3>
-            <h4>Chief Financial Officer / CEO</h4>
+            <h3>Lead Sales Manager</h3>
+            <h4>Sales Representative</h4>
           </div>
           <div className="team-social">
             <FaFacebook className='facebook'/><FaTwitter className='twitter' /><FaInstagram className='instagram' />
