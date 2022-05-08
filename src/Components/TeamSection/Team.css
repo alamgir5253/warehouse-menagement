@@ -20,7 +20,7 @@
 .team-img{
   width: 30rem;
   height: 30rem;
-  border: .1rem solid #FF5E1D;
+  border: .1rem solid #f39c12;
   border-radius: 50%;
   margin: 0 auto;
   overflow: hidden;
@@ -40,7 +40,7 @@
 .team-info h3{
   font-size: 2.5rem;
   margin-top: 2rem;
-  color: RGBA(0,0,0,0.80)
+  color: #ee5253
 }
 .team-info h4{
   font-size: 1.6rem;
@@ -57,6 +57,7 @@
   margin-left: 1rem;
   transition: .3s ease-in-out;
   cursor: pointer;
+  color: #8395a7;
 }
 .facebook:hover{
   color: RGBA(0,0,255,0.76);
@@ -98,5 +99,9 @@
     .team-img{
       width: 20rem;
       height: 20rem
+    }
+    .team-title{
+      font-size: 2rem;
+      margin: 3rem 0;
     }
   }

@@ -5,6 +5,27 @@
   text-transform: uppercase;
   margin: 5rem 0;
 }
+.manage-button{
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  margin: auto;
+  display: block;
+  width: 20rem;
+  border-radius: 3rem;
+  text-align: center;
+  margin-top: 5rem;
+  color: #0abde3;
+  border: .2rem solid #0abde3;
+  transition: .3s ease-in-out
+
+}
+.manage-button:hover{
+  
+  color: #fff;
+  background: #0abde3;
+  
+}
 
 .inventorySection{
   display: grid;
@@ -25,5 +46,9 @@
   .inventorySection{
     grid-template-columns: repeat(1, 1fr);
     
+  }
+  .inventory-items-title{
+    font-size: 2rem;
+    margin: 3rem 0;
   }
 }

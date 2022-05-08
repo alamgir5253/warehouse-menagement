@@ -47,7 +47,7 @@ const handleDelete = id =>{
       </div>)
       }
     </div>
-    <Link className='manageinventories-title' to='/additem'>add item</Link>
+    <Link className='addItemButton' to='/additem'>add item</Link>
       
     </div>
   );

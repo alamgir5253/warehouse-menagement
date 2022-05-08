@@ -1,11 +1,13 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import payment from '../../images/payment.png'
 import './Footer.css'
 const Footer = () => {
   return (
     <footer className='footer-section'>
       <div className='section1'>
-        <h3>company name</h3>
+        <h3>Dream Auto Warehouse
+</h3>
         <div className="footer-social">
         <FaFacebook className='facebook'/><FaTwitter className='twitter' /><FaInstagram className='instagram' /> <FaYoutube className='youtube' />
           </div>
@@ -18,6 +20,7 @@ const Footer = () => {
       </div>
       <div className='section3'>
         <h3>payment method</h3>
+        <img src={payment} alt="" />
 
       </div>
     </footer>

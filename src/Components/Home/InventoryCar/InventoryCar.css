@@ -1,24 +1,49 @@
 .car{
   width: 100%;
+  box-shadow: 0 0 1rem #c8d6e5;
+  padding: 1rem;
+  border-radius: .5rem;
 }
 .car .car-img{
   width: 100%;
+  
+}
+.car .car-img img{
+  width: 100%;
+  border-radius: .5rem;
+  
 }
 .car .car-info{
   padding: 2rem;
 }
 .car-info h3{
   font-size: 2.5rem;
-  color: RGBA(0,12,0,0.77)
+  color: #0abde3
+
 }
 .car-info span{
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #f39c12;
   
 }
 .car-info h5{
-  font-size: 2rem
+  font-size: 1.8rem;
+  color: #ee5253
 }
 .car-info p{
+  padding-top: 2rem;
   font-size: 1.6rem;
+  color: #222f3e
+  
+}
+.car button{
+  font-size: 2rem;
+  color: #fff;
+  background: #0abde3;
+  padding: 1rem 3rem;
+  margin: auto;
+  display: block;
+  border-radius: 1rem;
+  
 }

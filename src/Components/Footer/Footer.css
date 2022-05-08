@@ -9,6 +9,10 @@
 .section1, .section2, .section3{
   margin-bottom: 3rem;
 }
+.section3 img{
+  width: 10rem;
+  margin: auto;
+}
 .footer-section h3{
   color: #00000B;
   margin: 2rem;

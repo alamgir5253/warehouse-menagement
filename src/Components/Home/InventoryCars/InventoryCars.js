@@ -21,7 +21,7 @@ const InventoryCars = () => {
         ></InventoryCar>)
       }
     </div>
-    <Link to='/ManageInventories'><h2 className='inventory-items-title'>Manage Inventories</h2></Link>
+    <Link className='manage-button' to='/ManageInventories'>Manage item</Link>
     </div>
   );
 };
