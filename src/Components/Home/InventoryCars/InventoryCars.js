@@ -5,7 +5,7 @@ import './InventoryCars.css'
 const InventoryCars = () => {
   const [cars, setCars] = useState([])
   useEffect(()=>{
-    const url ="http://localhost:5000/cars"
+    const url ="https://sheltered-brook-56592.herokuapp.com/cars"
     fetch(url)
     .then(res => res.json())
     .then(data => setCars(data))

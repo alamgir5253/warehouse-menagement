@@ -1,5 +1,32 @@
 # Getting Started with Create React App
 
+# website name 
+ Dream Auto Warehouse
+
+# short description
+ dream auto warehouse is a fantastic site where you can see world famous car collcetion.
+this website is fully responsive and dynamic. 
+
+live site link: [https://dream-auto-warehouse.web.app/](https://dream-auto-warehouse.web.app/)
+
+clint side code link: [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-alamgir5253](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-alamgir5253)
+
+server side code link: [https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-alamgir5253](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-alamgir5253)
+
+github issue link: [https://github.com/ProgrammingHero1/warehouse-management-website/issues/1](https://github.com/ProgrammingHero1/warehouse-management-website/issues/1)
+
+ different features and functionality
+
+ - this is fully responsive in desktop, tab and mobile device.
+ - I use firebase and react-firebase-hooks to authenticate a user.
+ - I use react form to adding item on database.
+ - I use toast to show massage whice is looking very nice.
+ - there is a button in the INVENTORY ITEMS  section, if you click on the button it will take you in MANAGE INVENTORIES page where you can delete a item. but you cann't asscss the page without signup ro login.
+  - there is also a button in MANAGE INVENTORIES page called add item this button will take you in add item page but you cann't asscss the page without signup ro login.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

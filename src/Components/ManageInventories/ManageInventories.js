@@ -4,7 +4,7 @@ import './ManageInventories.css'
 const ManageInventories = () => {
 const [items, setItems] = useState([])
 useEffect(()=>{
-  const url = 'http://localhost:5000/ManageInventories'
+  const url = 'https://sheltered-brook-56592.herokuapp.com/ManageInventories'
   fetch(url)
   .then(res => res.json())
   .then(data =>setItems(data))
@@ -14,7 +14,7 @@ useEffect(()=>{
 const handleDelete = id =>{
   const proceed = window.confirm('are you sure')
   if(proceed){
-    const url =`http://localhost:5000/ManageInventories/${id}`
+    const url =`https://sheltered-brook-56592.herokuapp.com/ManageInventories/${id}`
     fetch(url, {
       method:'DELETE'
     })
