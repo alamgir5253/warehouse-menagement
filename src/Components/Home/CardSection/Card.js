@@ -12,7 +12,7 @@ import './Card.css'
 const Card = () => {
   return (
     <section>
-      <h2 className='card-title'>our our best collection</h2>
+      <h2 className='card-title'>our best collection</h2>
       <div className='card-container'>
       <div className="card">
         <div className='card-img1'>
